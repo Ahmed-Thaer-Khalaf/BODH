@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    
+        <link rel="manifest" href="./manifest.json">
+        <link href="css/style.css" rel="stylesheet">
+
+  <link rel="apple-touch-icon" href="images/hello-icon-152.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">  <meta name="theme-color" content="white"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Hello World">
+  <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+    
+</head>
+    <body>
+      
+      <div id="head">DtoBOH</div>
+      <div style="height: 50px;"></div>
+
+        <div id="app" class="wrapper">
+
+        
+       
+          <div id="inputHead">
+          <div class="select">
+          <label class="select" for="fruit-select">Decimal to </label>
+    
+          <select id="fruit-select" @change="dis" v-model="selectedFruit">
+            <option v-for="fruit in fruits" :key="fruit">{{ fruit }}</option>
+          </select>
+
+    </div>
+    
+    <input  v-model="number" placeholder="input number here" @input="dis" type="number">
+  </div>
+           <div   id="t"  v-if="!(number == '')">
+          
+            <p># Decimal to {{ selectedFruit }} <br> # input : {{number}}</p>
+            
+            <table>
+                <thead>
+                  <tr>
+                    <th>العدد</th>
+                    <th>القسمه على</th>
+                    <th>الباقي</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in solved" :key="item">
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                  </tr>
+                </tbody>
+                
+              </table>
+            
+              <p> <span style="font-size: 9px; color: #B9BBBE;"><span style="font-size: 16px; color: white;"> <span style="color: #B9BBBE;">(</span> {{number}} <span style="color: #B9BBBE;">)</span></span>{{tage}}</span> = <span style="color: #c792ea;">{{convert(number,baseFrom,baseTo)[0]}}</span>{{(convert(number,baseFrom,baseTo)).substring(1)}}</p>
+               
+              <p id="my">@ By Ahmed Thaer</p>
+            </div>
+            <button v-if="!(number == '')" class="download" @click="take('t')">تنزيل</button>
+            
+        </div>
+
+
+      
+         
+      
+        
+        <footer>this tool make by <a  href="#">ahmed thaer</a> <br>
+        
+        </footer>
+        <script src="./lib/html2canvas.min.js"></script>
+        <script type="module" src="main.js"></script>
+        
+        <script>
+         window.onload = () => {
+          'use strict';
+
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                    .register('/sw.js');
+          }
+}
+        </script>
+      
+      
+
+    </body>
+</html>
