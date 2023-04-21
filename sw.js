@@ -1,6 +1,6 @@
 var cacheName = 'DtoBOH';
 var filesToCache = [
-  '/BODH',
+  '/',
   '/index.html',
   '/css/style.css',
   '/main.js',
