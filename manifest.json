@@ -32,7 +32,7 @@
       "lang": "ar",
       "description": ".تطبيق رائع سيساعدك على تحقيق أحلامك",
       
-    "start_url": "/index.html",
+    "start_url": "https://ahmed-thaer-khalaf.github.io/BODH/",
     "display": "standalone",
     "background_color": "white",
     "theme_color": "white"
