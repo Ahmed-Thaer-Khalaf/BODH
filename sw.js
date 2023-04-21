@@ -1,13 +1,13 @@
 var cacheName = 'DtoBOH';
 var filesToCache = [
-  '/BODH/',
-  '/BODH/index.html',
-  '/BODH/css/style.css',
-  '/BODH/main.js',
-  '/BODH/lib/html2canvas.min.js',
-  '/BODH/lib/vue.esm-browser.js',
-  '/BODH/data.js',
-  '/BODH/methods.js',
+  '/',
+  '/index.html',
+  '/css/style.css',
+  '/main.js',
+  '/lib/html2canvas.min.js',
+  '/lib/vue.esm-browser.js',
+  '/data.js',
+  '/methods.js',
 ];
 
 /* Start the service worker and cache all of the app's content */
