@@ -31,8 +31,9 @@
       "dir": "rtl",
       "lang": "ar",
       "description": ".تطبيق رائع سيساعدك على تحقيق أحلامك",
-      
+    "scope": "/",  
     "start_url": "/index.html",
+    
     "display": "standalone",
     "background_color": "white",
     "theme_color": "white"
