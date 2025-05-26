@@ -2,14 +2,15 @@ export const data = {
 
     message: 'Hello Vue!',
     number: '',
+    inputError: '', 
     baseFrom : "10",
     baseTo : "2",
     image: '',
-    tage: '10',
+    tage: '10', // This is the subscript for the input number, should remain '10' (decimal)
     options : {
-        backgroundColor	: "#ffffff00", 
-        scale : window.devicePixelRatio ,
-        
+        backgroundColor	: null, 
+        scale : Math.max(window.devicePixelRatio || 1, 2), 
+        useCORS: true 
     },
 
     backgroundColor:{
@@ -20,7 +21,8 @@ export const data = {
 
     solved : [] ,
     
-    fruits: ['Binary','Octal','Hex'],
-      selectedFruit: 'Binary',
+    // Translated fruits array and default selection
+    fruits: ['ثنائي', 'ثماني', 'سداسي عشري'], 
+    selectedFruit: 'ثنائي', 
     
 };

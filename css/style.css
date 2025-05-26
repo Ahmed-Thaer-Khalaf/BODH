@@ -1,303 +1,383 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&family=Tajawal:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap');
 
-:root{
-    /* this background-color for tbale and color text */
-    --background-image: rgba(233, 237, 237, 1)!important; 
-    --color-bg-text: #000000ee ;
+:root {
+    /* Color Scheme */
+    --primary-color: #0056b3; /* Deep Blue for headers, primary actions */
+    --secondary-color: #17a2b8; /* Teal for accents */
+    --light-bg: #f8f9fa; /* Light Gray for page background */
+    --medium-bg: #e9ecef; /* Medium Gray for element backgrounds, borders */
+    --dark-bg: #343a40; /* Dark Gray for footer, table head */
+    
+    --primary-text-color: #212529; /* Near Black for body text */
+    --secondary-text-color: #495057; /* Dark Gray for less prominent text */
+    --light-text-color: #ffffff; /* White for dark backgrounds */
+    --accent-text-color: #007bff; /* Blue for links or special text */
+    --table-row-hover-bg: #dceafc; /* Lighter blue for table row hover */
 
-    /* background-color table  and color text*/
-    --background-table: #263238!important ;
-    --background-table-color: rgba(233, 237, 237, 1)!important;
+    /* Legacy variables - map to new palette */
+    --background-image: var(--light-bg); 
+    --color-bg-text: var(--primary-text-color);
 
-    --background-head: #005b89;
-    --head-color: #ffffffee;
+    --background-table: var(--light-text-color); /* Table content area */
+    --background-table-color: var(--primary-text-color); /* Text within table cells */
+
+    --background-head: var(--primary-color); /* Main page header */
+    --head-color: var(--light-text-color); /* Text in main page header */
+
+    /* Typography */
+    --font-family-arabic: 'Noto Kufi Arabic', 'Tajawal', sans-serif;
+    --font-family-latin: 'Tajawal', sans-serif; /* For numbers or non-Arabic text if needed */
+    --base-font-size: 16px;
+    --line-height-normal: 1.7;
+    --line-height-heading: 1.4;
 }
 
-
-  
-  
-
-
-body{
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    font-family: 'Tajawal', sans-serif;
+body {
+    font-family: var(--font-family-arabic);
+    font-size: var(--base-font-size);
+    line-height: var(--line-height-normal);
+    color: var(--primary-text-color);
+    background-color: var(--light-bg);
     margin: 0;
     padding: 0;
     direction: rtl;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     width: 100%;
     height: 100%;
     max-width: 100%;
     min-width: 100%;
-    box-sizing: border-box;
-    
 }
 
-#app{
-   
-  width: 100%;  
-  min-height: 85%;
-}
-
-
-table{
-    
-    width: 360px;
-    background-color: var(--background-table);
-    outline: none;
-    padding: 24px;
-    border: none;
-    border-radius: 8px;
+#app {
     width: 100%;
-    
+    min-height: 85%;
+    padding-bottom: 70px; /* Increased Space for footer */
 }
 
-table > thead {
-    
-    border: none;
-    font-size: 16px;
-    
-}
-
-.select{
-direction: ltr;
-}
-
-table > *{
-    text-align: center;
-    border: none;
-    outline: none;
-    margin: 24px;
-    background-color: var(--background-table);
-    color: var(--background-table-color);
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    font-family: 'Tajawal', sans-serif;
-}
-
-td{
-    font-size: 16px;
-    padding: 4px 8px;
-    width: 120px;
-}
-
-table > thead > tr > th:nth-child(1){
-    color: #80CBC4!important;
-}
-
-table > thead > tr > th:nth-child(3){
-    color: white;
-}
-
-#t{
-    width:100%;
-    max-width: 720px;
-    background-color: var(--background-image);
-    box-sizing: border-box;
-    /* border-radius: 8px; */
-    padding: 8px 24px;
-    color: var(--color-bg-text);
+/* Header Styles */
+#head {
+    padding: 12px 24px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    font-size: 22px; 
     font-weight: 600;
-    direction: ltr;
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    font-family: 'Tajawal', sans-serif;
-    
-    
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
+    direction: rtl; /* Changed to RTL for "محول الأرقام" */
+    text-align: center; /* Center the header text */
 }
 
-/* tbody > tr:nth-child(1) > td:nth-child(3){
-    color: red;
-    
-} */
-
-tbody > tr:nth-child(1) > td:nth-child(1){
-    color: whitesmoke;
-    font-weight: 700;
+.header-spacer { 
+    height: 65px; 
 }
 
 
-#my{
-    padding-top: 4px;
-}
-
-#t > p:nth-child(1){
-    font-weight: 900;
+/* Input Area Styles */
+#inputHead {
+    direction: rtl; 
+    text-align: right; 
+    background-color: var(--medium-bg);
+    color: var(--primary-text-color);
+    padding: 20px 24px; 
     font-size: 18px;
-}
-
-#t > p:nth-child(3){
-    font-weight: 900;
-    font-size: 16px;
-    text-align: center;
-    
-    padding: 8px;
+    max-width: 720px;
+    margin: 20px auto; 
     border-radius: 8px;
-    background-color: var(--background-table);
-    color: rgba(233, 237, 237, 1)!important;;
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 700;
-    
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-
-
-thead > tr > th{
-    padding-bottom: 12px;
+#inputHead .select {
+    direction: rtl; 
+    margin-bottom: 15px; 
 }
 
-/* tbody > tr > td:nth-child(3) {
-    border: 1px solid white;
-} */
-
-tbody > tr:last-child > td:last-child {
-   color: #c792ea;
+#inputHead label.select {
+    margin-left: 8px; 
+    font-weight: 500;
 }
 
-.download{
-    background-color: #005ba4;
-    border: none;
-    padding: 12px 18px;
-    color: white;
-    margin: 24px;
-    font-size: 18px;
+select {
+    font-family: var(--font-family-latin); 
+    font-size: 16px;
+    font-weight: 500; 
+    border: 1px solid #ced4da; 
+    padding: 8px 12px; 
+    border-radius: 4px;
+    background-color: var(--light-text-color);
+    color: var(--primary-text-color);
 }
 
-#inputHead{
+#inputHead input[type="number"] {
+    background-color: var(--light-text-color);
+    border: 1px solid #ced4da;
+    outline: none;
+    padding: 10px 12px; 
+    width: 100%; 
+    border-radius: 4px;
+    margin-top: 8px; 
+    font-family: var(--font-family-latin); 
     direction: ltr;
     text-align: left;
-    background-color: var(--background-head) ;
-    color: var(--head-color);
-    padding: 24px;
-    font-size: 18px;
-    max-width: 720px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 
-
-select{
-    
-    font-size: 16px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    font-weight: 600;
-    border: 2px solid white;
-    padding: 2px 4px;
-   
-    
-}
-
-#inputHead > input 
-{
-    background-color: white;
-    border: none;
-    outline: none;
-    padding: 8px ;
-    width: 60%;
-    border-radius:2px;
-    margin: 8px 0;
-}
-
-#inputHead > input::placeholder{
+#inputHead input[type="number"]::placeholder {
     text-align: left;
-    
+    color: var(--secondary-text-color);
+    font-family: var(--font-family-arabic); 
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 720px; 
+    background-color: var(--background-table); 
+    border: 1px solid #dee2e6; 
+    border-collapse: collapse; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin: 20px auto; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+table > * { 
+    text-align: center;
+    font-family: var(--font-family-arabic);
+}
+
+table thead {
+    background-color: var(--primary-color); 
+    color: var(--light-text-color);
+    font-size: 17px; 
+    font-weight: 600; 
+}
+
+table th, table td {
+    padding: 12px 10px; /* Verified padding */
+    border: 1px solid #e0e0e0; 
+    color: var(--background-table-color); 
+    line-height: var(--line-height-normal);
+    text-align: center; /* Verified alignment */
+}
+
+table td {
+    font-size: 16px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--medium-bg); /* Alternating row color */
+}
+
+tbody tr:hover {
+    background-color: var(--table-row-hover-bg); /* Hover effect */
+    color: var(--primary-text-color); /* Ensure text is readable on hover */
+}
+
+tbody > tr:nth-child(1) > td:nth-child(1) { 
+    font-weight: 700; 
+    color: var(--primary-color); 
+}
+
+tbody > tr:last-child > td:last-child { 
+   color: var(--secondary-color); 
+   font-weight: 700;
+}
+
+/* Results Display Styles */
+#t {
+    width: 100%;
+    max-width: 720px;
+    background-color: var(--medium-bg); 
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 20px 24px; 
+    color: var(--color-bg-text);
+    font-weight: 500; 
+    margin: 20px auto; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#t p { /* General paragraph styling within results area */
+    margin-bottom: 12px; 
+    line-height: var(--line-height-heading); 
+}
+
+#t p:nth-child(1) { /* Input summary: "# Decimal to Binary # input : 10" */
+    font-weight: 600; 
+    font-size: 18px; 
+    color: var(--primary-text-color);
+}
+
+/* Styling for the paragraph containing the final conversion result */
+.final-result-paragraph {
+    font-weight: 500; /* Base weight for the paragraph */
+    font-size: 20px; /* Base font size for this paragraph */
+    text-align: center;
+    padding: 15px; 
+    border-radius: 6px;
+    background-color: var(--dark-bg); 
+    color: var(--light-text-color); 
+    margin-top: 25px; /* More space above */
+    margin-bottom: 15px; /* Space below */
+    line-height: 1.5; /* Adjust line height for better spacing of mixed font sizes */
+}
+
+.original-number-display {
+    font-size: 0.8em; /* Smaller for less emphasis */
+    color: var(--medium-bg); /* Lighter color, less prominent */
+    margin-right: 5px; /* Space before equals sign */
+}
+
+.original-number-display .number-value {
+    font-weight: 600; /* Slightly bolder original number */
+}
+
+.base-subscript {
+    font-size: 0.7em;
+    vertical-align: sub;
+    margin-left: 1px; /* Tiny space before subscript */
+}
+
+.final-result-value {
+    font-size: 1.7em; /* Significantly larger for emphasis */
+    font-weight: 700; /* Bold */
+    color: var(--secondary-color); /* Teal, for thematic consistency */
+    margin-left: 5px; /* Space after equals sign */
+    vertical-align: middle; /* Align better with surrounding text */
 }
 
 
-/* table > tbody > tr > td:nth-child(3){
-    
-} */
-
-.text{
-padding: 8px;
-font-size: 18px;
+/* The #my ID is used for "@ By Ahmed Thaer" paragraph */
+#my { 
+    padding-top: 10px !important; 
+    font-size: 14px !important;
+    color: var(--secondary-text-color) !important;
+    text-align: center !important; 
+    display: block !important; 
+    margin-top: 15px; 
 }
 
+/* Download Button Styles */
+.download {
+    background-color: var(--primary-color); 
+    border: none;
+    padding: 12px 24px; 
+    color: var(--light-text-color);
+    margin: 24px auto; 
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; 
+    transition: background-color 0.2s ease;
+}
 
-.banner {
+.download:hover {
+    background-color: #004080; 
+}
+
+/* Text & Banner Styles (PWA related) */
+.text{ 
+    padding: 8px;
+    font-size: 18px;
+    line-height: var(--line-height-normal);
+}
+
+.banner { 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f6c5c5;
-    color: #5c0000;
-    padding: 10px;
+    background-color: var(--secondary-color); 
+    color: var(--light-text-color);
+    padding: 12px 15px; 
     font-size: 16px;
-  }
-  
-  .close-button {
+    margin-bottom: 15px; 
+}
+
+.close-button {
     background: none;
     border: none;
     color: inherit;
-    font-size: 20px;
+    font-size: 22px; 
     cursor: pointer;
-  }
+}
 
-  
-  .install{
-   color: white;
-   padding: 8px 12px;
+.install { 
+   color: var(--primary-color); 
+   padding: 8px 16px; 
    outline: none;
-   border: none;
-   font-weight: 500;
-   margin: 8px;
-   background-color: #00a173;
+   border: 1px solid var(--primary-color); 
    font-weight: 600;
-   border-radius: 2px;
-  }
+   margin: 8px;
+   background-color: var(--light-text-color); 
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.2s ease, color 0.2s ease;
+}
 
-  footer{
-   direction: ltr;
-   text-align: center;
-   padding: 24px;
-   background-color: #263238;
-   color: white;
-   font-weight: 500;
-   
-  }
+.install:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
 
-  footer > a {
-    color: white;
-  }
-
-  #head{
-  padding: 8px;
-  position: fixed;
-  background-color: white;
-  direction: ltr;
-  font-size: 20px;
-  font-weight: 600;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
-
-  footer {
-    
-    background-color: #333;
-    color: #fff;
+/* Footer Styles */
+footer {
+    direction: ltr;
     text-align: center;
-    position: relative;
-    bottom: 0%;
+    padding: 20px; 
+    background-color: var(--dark-bg); 
+    color: var(--medium-bg); 
+    font-weight: 500;
+    position: relative; 
+    bottom: 0;
     width: 100%;
-    min-height: 10%;
-    
-    
-  }
+    font-size: 15px;
+    line-height: var(--line-height-normal);
+}
 
-  @media only screen and (min-width: 600px) {
-    #app{
+footer a {
+    color: var(--light-text-color); 
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+    #app {
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: flex-start;
     }
-  }
-  
-  
-  
+
+    #inputHead, #t, table { 
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%; 
+    }
+}
+
+/* Input Error Message Styling */
+.error-message {
+    color: #dc3545; 
+    font-size: 0.9em;
+    margin-top: 8px; 
+    margin-bottom: 5px; 
+    text-align: right; 
+}

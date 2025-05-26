@@ -26,8 +26,8 @@
 </head>
     <body>
       
-      <div id="head">DtoBOH</div>
-      <div style="height: 50px;"></div>
+      <div id="head">محول الأرقام</div>
+      <div class="header-spacer"></div>
 
         <div id="app" class="wrapper">
 
@@ -35,7 +35,7 @@
        
           <div id="inputHead">
           <div class="select">
-          <label class="select" for="fruit-select">Decimal to </label>
+          <label class="select" for="fruit-select">تحويل من عشري إلى </label> <!-- Translated -->
     
           <select id="fruit-select" @change="dis" v-model="selectedFruit">
             <option v-for="fruit in fruits" :key="fruit">{{ fruit }}</option>
@@ -43,11 +43,12 @@
 
     </div>
     
-    <input  v-model="number" placeholder="input number here" @input="dis" type="number">
+    <input  v-model="number" placeholder="أدخل عددًا عشريًا هنا" @input="dis" type="number">
+    <p v-if="inputError" class="error-message">{{ inputError }}</p>
   </div>
-           <div   id="t"  v-if="!(number == '')">
+           <div id="t" v-if="!(number == '') && !inputError">
           
-            <p># Decimal to {{ selectedFruit }} <br> # input : {{number}}</p>
+            <p># تحويل من عشري إلى {{ selectedFruit }} <br> # المدخل : {{number}}</p> <!-- Translated "input :" -->
             
             <table>
                 <thead>
@@ -67,11 +68,16 @@
                 
               </table>
             
-              <p> <span style="font-size: 9px; color: #B9BBBE;"><span style="font-size: 16px; color: white;"> <span style="color: #B9BBBE;">(</span> {{number}} <span style="color: #B9BBBE;">)</span></span>{{tage}}</span> = <span style="color: #c792ea;">{{convert(number,baseFrom,baseTo)[0]}}</span>{{(convert(number,baseFrom,baseTo)).substring(1)}}</p>
+              <p class="final-result-paragraph"> 
+                <span class="original-number-display">
+                  (<span class="number-value">{{number}}</span>)<sub class="base-subscript">{{tage}}</sub>
+                </span> =
+                <span class="final-result-value">{{convert(number,baseFrom,baseTo)[0]}}</span>{{(convert(number,baseFrom,baseTo)).substring(1)}}
+              </p>
                
-              <p id="my">@ By Ahmed Thaer</p>
+              <p id="my">@ بواسطة أحمد ثائر</p> <!-- Translated byline -->
             </div>
-            <button v-if="!(number == '')" class="download" @click="take('t')">تنزيل</button>
+            <button v-if="!(number == '') && !inputError" class="download" @click="take('t')">تنزيل</button>
             
         </div>
 
@@ -80,9 +86,7 @@
          
       
         
-        <footer>this tool make by <a  href="#">ahmed thaer</a> <br>
-        
-        </footer>
+        <footer>تم إنشاء هذه الأداة بواسطة <a href="#">أحمد ثائر</a> <br></footer> <!-- Translated footer -->
         <script src="./lib/html2canvas.min.js"></script>
         <script type="module" src="main.js"></script>
         
